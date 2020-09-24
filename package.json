@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "integration": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./src/tests/integration.ps1"
+    "integration": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./src/tests/integration.ps1",
+    "unit": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./src/tests/unit.ps1"
   },
   "keywords": [],
   "author": "",
