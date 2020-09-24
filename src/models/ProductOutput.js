@@ -16,6 +16,7 @@ const ProductOutputSchema = new mongoose.Schema({
   Quantity: Number,
   UnityPrice: Number,
   TotalPrice: Number,
+  Third: Boolean,
   CreateAt: Date
 });
 

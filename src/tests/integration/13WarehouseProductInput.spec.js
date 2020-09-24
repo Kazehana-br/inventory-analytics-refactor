@@ -23,7 +23,7 @@ describe("Check Warehouse - ProductInput", () => {
     const response = await request(app)
       .post("/warehouse-add-product-input/" + warehouse.body[0]._id)
       .send({
-        ProductInput: productInput.body[0]._id,
+        IdProductInput: productInput.body[0]._id,
       });
     expect(mongoose.Types.ObjectId.isValid(response.body._id)).toBeTruthy();
   });

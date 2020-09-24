@@ -69,7 +69,7 @@ module.exports = {
     const { IdProductOutput } = request.body;
     const warehouse = await Warehouse.findOne({ _id: id });
     const productOut = await ProductOutput.findOne({ _id: IdProductOutput });
-
+    const third = productOut.Third;
     if((warehouse.WarehouseType === 1 && third ===false ) || (warehouse.WarehouseType === 2 && third ===true)){
       if (!(await ArrayIncludes(warehouse.ProductOutput, IdProductOutput))) {
         warehouse.ProductOutput.push(IdProductOutput);
