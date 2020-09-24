@@ -1,9 +1,9 @@
-const Filial = require("../../models/App/Filial");
-const ArrayIncludes = require("../../utils/ArrayIncludes");
+const Filial = require("../models/Filial");
+const ArrayIncludes = require("../utils/ArrayIncludes");
 
 module.exports = {
   async index(request, response) {
-    const filiais = await Filial.find();
+    const filiais = await Filial.find().populate("Warehouse");
     return response.json(filiais);
   },
   async store(request, response) {

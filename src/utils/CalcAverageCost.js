@@ -1,4 +1,4 @@
-const ProductInput = require("../models/App/ProductInput");
+const ProductInput = require("../models/ProductInput");
 
 module.exports = async function CalcAverageCost(TotalPrice, Quantity) {
   let count = await ProductInput.countDocuments();

@@ -6,7 +6,7 @@ const routes = require("./routes");
 const { ipMiddleware } = require("./middleware/ipfilter");
 const app = express();
 app.use(ipMiddleware);
-mongoose.connect(process.env.mongouri, {
+mongoose.connect(process.env.mongotests, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

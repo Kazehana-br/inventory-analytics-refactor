@@ -22,6 +22,12 @@ const WarehouseSchema = new mongoose.Schema({
       ref: "ProductInput",
     },
   ],
+  ProductOutput: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "ProductOutput",
+    },
+  ],
   Size: Number,
   SizeVirtual: Number,
 });

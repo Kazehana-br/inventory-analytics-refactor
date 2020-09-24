@@ -24,7 +24,7 @@ describe("Check ProductInput", () => {
 
   it("should to create a first product-input", async () => {
     const product = await request(app).get("/product-all");
-    const warehouse = await request(app).get("/product-all");
+    const warehouse = await request(app).get("/warehouse-all");
 
     const response = await request(app).post("/product-input-create").send({
       Name: "Arroz",

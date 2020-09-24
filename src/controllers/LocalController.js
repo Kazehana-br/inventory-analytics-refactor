@@ -1,9 +1,9 @@
-const Local = require("../../models/App/Local");
-const ArrayIncludes = require("../../utils/ArrayIncludes");
+const Local = require("../models/Local");
+const ArrayIncludes = require("../utils/ArrayIncludes");
 
 module.exports = {
   async index(request, response) {
-    const locais = await Local.find();
+    const locais = await Local.find().populate("Warehouse");
     return response.json(locais);
   },
   async store(request, response) {

@@ -16,6 +16,8 @@ const ProductInputSchema = new mongoose.Schema({
   UnityPrice: Number,
   TotalPrice: Number,
   AverageCost: Number,
+  Third: Boolean,
+  CreateAt: Date
 });
 
 module.exports = mongoose.model("ProductInput", ProductInputSchema);

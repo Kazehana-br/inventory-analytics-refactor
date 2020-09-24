@@ -1,4 +1,4 @@
-const Document = require("../../models/App/Document");
+const Document = require("../models/Document");
 
 module.exports = {
   async index(request, response) {

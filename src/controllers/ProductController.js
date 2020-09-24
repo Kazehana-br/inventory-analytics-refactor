@@ -1,9 +1,9 @@
-const Product = require("../../models/App/Product");
-const ArrayIncludes = require("../../utils/ArrayIncludes");
+const Product = require("../models/Product");
+const ArrayIncludes = require("../utils/ArrayIncludes");
 
 module.exports = {
   async index(request, response) {
-    const produtos = await Product.find();
+    const produtos = await Product.find().populate("Supplier");
     return response.json(produtos);
   },
   async store(request, response) {

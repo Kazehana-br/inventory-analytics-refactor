@@ -2,13 +2,14 @@ const { Router } = require("express");
 const { verifyJWT } = require("./middleware/verifyJWT");
 
 //Importacao App controllers
-const WarehouseController = require("./controllers/App/WarehouseController");
-const LocalController = require("./controllers/App/LocalController");
-const FilialController = require("./controllers/App/FilialController");
-const ProductController = require("./controllers/App/ProductController");
-const SupplierController = require("./controllers/App/SupplierController");
-const DocumentController = require("./controllers/App/DocumentController");
-const ProductInputController = require("./controllers/App/ProductInputController");
+const WarehouseController = require("./controllers/WarehouseController");
+const LocalController = require("./controllers/LocalController");
+const FilialController = require("./controllers/FilialController");
+const ProductController = require("./controllers/ProductController");
+const SupplierController = require("./controllers/SupplierController");
+const DocumentController = require("./controllers/DocumentController");
+const ProductInputController = require("./controllers/ProductInputController");
+const ProductOutputController = require("./controllers/ProductOutputController");
 
 const routes = Router();
 
@@ -20,6 +21,11 @@ routes.post(
   "/warehouse-add-product-input/:id",
   WarehouseController.AddProductInput
 );
+routes.post(
+  "/warehouse-add-product-output/:id",
+  WarehouseController.AddProductOutput
+);
+
 
 routes.get("/local-all", LocalController.index);
 routes.post("/local-create", LocalController.store);
@@ -47,10 +53,20 @@ routes.get("/document-details/:id", DocumentController.show);
 
 routes.get("/product-input-all", ProductInputController.index);
 routes.post("/product-input-create", ProductInputController.store);
+routes.post("/product-input-create-third", ProductInputController.storeThird);
 routes.get("/product-input-details/:id", ProductInputController.show);
 routes.post(
   "/product-input-add-document/:id",
   ProductInputController.AddDocument
 );
 
+
+routes.get("/product-output-all", ProductOutputController.index);
+routes.post("/product-output-create", ProductOutputController.store);
+routes.get("/product-output-details/:id", ProductOutputController.show);
+
+routes.post(
+  "/product-output-add-document/:id",
+  ProductOutputController.AddDocument
+);
 module.exports = routes;
